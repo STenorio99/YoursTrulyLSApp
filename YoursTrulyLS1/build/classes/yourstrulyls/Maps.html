@@ -1,0 +1,115 @@
+<html>
+ <head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+ <title>Google Map API V3 with markers</title>
+ <style type="text/css">
+ body { font: normal 10pt Helvetica, Arial; }
+ #map { width: 100%; height: 100%; border: 0px; padding: 0px; }
+ </style>
+
+ <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ <script type="text/javascript" src="http://code.google.com/apis/gears/gears_init.js"></script>
+
+ </head>
+ <body>
+ <div id="map" style="height: 100%; width: 100%;">
+
+    
+</div>
+<div>
+      
+<div id="map"></div>
+    <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var corner1 = {lat: 38.912253, lng: -94.381094};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: new google.maps.LatLng(38.9122989, -94.3766686)
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Corner 1</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Corner 1</b>, Also refered to as Corner 1 is corner 1'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: corner1,
+          map: map,
+          title: 'Corner 1'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      
+      var corner2 = {lat: 38.915846, lng: -94.372296};
+        
+
+        var contentString2 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Corner 2</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Corner 2</b>, Also refered to as Corner 2 is corner 2'+
+            '</div>'+
+            '</div>';
+
+        var infowindow2 = new google.maps.InfoWindow({
+          content: contentString2
+        });
+
+        var marker2 = new google.maps.Marker({
+          position: corner2,
+          map: map,
+          title: 'Corner 2'
+        });
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+        
+        var corner3 = {lat: 38.910497, lng: -94.372500};
+        
+
+        var contentString3 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Corner 2</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Corner 2</b>, Also refered to as Corner 2 is corner 2'+
+            '</div>'+
+            '</div>';
+
+        var infowindow3 = new google.maps.InfoWindow({
+          content: contentString3
+        });
+
+        var marker3 = new google.maps.Marker({
+          position: corner3,
+          map: map,
+          title: 'Corner 3'
+        });
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs2ib0qiXN9vORqIUqDKErESvbV_2roEM&callback=initMap">
+</script>
+
+ </div>
+ </html>
+ 
+ 
+ 
